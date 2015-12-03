@@ -19,18 +19,18 @@ public class DecemberFirst {
 
     public static void main(String[] args) throws IOException {
         String input = new String(Files.readAllBytes(Paths.get("inputs/input1")));
-        first(input);
-        second(input);
+        part1(input);
+        part2(input);
     }
 
-    public static void first(String input) {
+    public static void part1(String input) {
         char[] chars = input.toCharArray();
         List<Character> characters = new ArrayList<>(Chars.asList(chars));
         int floor = characters.stream().reduce(0, (sum, c) -> sum + (c == '(' ? 1 : -1), (sum1, sum2) -> sum1 + sum2);
         System.out.println(floor);
     }
 
-    public static void second(String input) {
+    public static void part2(String input) {
         char[] chars = input.toCharArray();
         List<Character> characters = new ArrayList<>(Chars.asList(chars));
         int[] index = {0};
