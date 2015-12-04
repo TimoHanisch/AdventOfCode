@@ -40,7 +40,7 @@ public class DecemberFourth {
                 return false;
             }
         }
-        return !odd || arr[count / 2] < 32 && arr[count / 2] > 0;
+        return !odd || arr[count / 2] < 0x0f && arr[count / 2] > 0x00;
     }
 
     private static String getHexHash(byte[] arr) {
