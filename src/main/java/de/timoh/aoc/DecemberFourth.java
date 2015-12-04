@@ -1,5 +1,6 @@
 package de.timoh.aoc;
 
+import javax.xml.bind.DatatypeConverter;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.nio.file.Files;
@@ -29,7 +30,7 @@ public class DecemberFourth {
                 break;
             }
         }
-        System.out.println("Hash: " + getHexHash(arr));
+        System.out.println("Hash: " + DatatypeConverter.printHexBinary(arr));
         System.out.println("Result: " + (num - 1));
     }
 
@@ -41,13 +42,5 @@ public class DecemberFourth {
             }
         }
         return !odd || arr[count / 2] < 0x0f && arr[count / 2] > 0x00;
-    }
-
-    private static String getHexHash(byte[] arr) {
-        StringBuilder sb = new StringBuilder();
-        for (byte anArr : arr) {
-            sb.append(Integer.toString((anArr & 0xff) + 0x100, 16).substring(1));
-        }
-        return sb.toString();
     }
 }
